@@ -26,9 +26,9 @@ namespace WebAPI.Controllers
                         DataSet ds = new DataSet();
                         sdp.Fill(ds);
                         /*xml uzantısı*/
-                        string csvData = XmlWriteMode(ds.Tables[0]);
+                        string xmlData = XmlWriteMode(ds.Tables[0]);
                         //StreamReader sr = new StreamReader(csvData,Encoding.GetEncoding(""));
-                        var fileBytes = Encoding.UTF8.GetBytes(csvData);
+                        var fileBytes = Encoding.UTF8.GetBytes(xmlData);
                         /*dosyayı hangi uzantıda indirmemiz gerektiği*/
                         return File(fileBytes, "application/xml", "Data.xml");               
        
