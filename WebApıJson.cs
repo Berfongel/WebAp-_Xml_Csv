@@ -27,9 +27,9 @@ namespace WebAPI.Controllers
                     
                         DataSet ds = new DataSet();                        
                         sdp.Fill(ds);
-                        string csvData = Utf8JsonWriter((ds.Tables[0]));
+                        string jsonData = Utf8JsonWriter((ds.Tables[0]));
                         //StreamReader sr = new StreamReader(csvData,Encoding.GetEncoding(""));
-                        var fileBytes = Encoding.UTF8.GetBytes(csvData);
+                        var fileBytes = Encoding.UTF8.GetBytes(jsonData);
                         /*dosyayı hangi uzantıda indirmemiz gerektiği*/
                         return File(fileBytes,"application/json","Data.json");
             
